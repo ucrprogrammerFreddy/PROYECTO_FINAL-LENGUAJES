@@ -1,0 +1,776 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Mar_Azul_API",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Etiquetas/GetEtiquetas": {
+      "get": {
+        "tags": [
+          "Etiquetas"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Etiquetas"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Etiquetas"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Etiquetas"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Etiquetas/GetEtiquetaForId/{idEtiqueta}": {
+      "get": {
+        "tags": [
+          "Etiquetas"
+        ],
+        "parameters": [
+          {
+            "name": "idEtiqueta",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Etiquetas"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Etiquetas"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Etiquetas"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Etiquetas/GetEtiquetaForName/{nombre}": {
+      "get": {
+        "tags": [
+          "Etiquetas"
+        ],
+        "parameters": [
+          {
+            "name": "nombre",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Etiquetas"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Etiquetas"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Etiquetas"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Etiquetas/AddEtiqueta": {
+      "post": {
+        "tags": [
+          "Etiquetas"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Etiquetas"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Etiquetas"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Etiquetas"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Etiquetas"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Etiquetas"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Etiquetas"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Etiquetas/UpdateEtiqueta/{idEtiqueta}": {
+      "put": {
+        "tags": [
+          "Etiquetas"
+        ],
+        "parameters": [
+          {
+            "name": "idEtiqueta",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Etiquetas"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Etiquetas"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Etiquetas"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Etiquetas/DeleteEtiqueta/{idEtiqueta}": {
+      "delete": {
+        "tags": [
+          "Etiquetas"
+        ],
+        "parameters": [
+          {
+            "name": "idEtiqueta",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Usuario": {
+      "get": {
+        "tags": [
+          "Usuario"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Usuario"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Usuario"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Usuario"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Usuario"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Usuario"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Usuario"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Usuario"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Usuario/{id}": {
+      "get": {
+        "tags": [
+          "Usuario"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Usuario"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Usuario"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Usuario"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Usuario"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Usuario"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/WeatherForecast": {
+      "get": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "operationId": "GetWeatherForecast",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ArticuloAutor": {
+        "type": "object",
+        "properties": {
+          "idArticulo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "articulo": {
+            "$ref": "#/components/schemas/Articulos"
+          },
+          "idUsuario": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "usuario": {
+            "$ref": "#/components/schemas/Usuario"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ArticuloEtiqueta": {
+        "type": "object",
+        "properties": {
+          "etiqueta": {
+            "$ref": "#/components/schemas/Etiquetas"
+          },
+          "idEtiqueta": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "articulo": {
+            "$ref": "#/components/schemas/Articulos"
+          },
+          "idArticulo": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Articulos": {
+        "required": [
+          "descripcion",
+          "estado",
+          "nombre"
+        ],
+        "type": "object",
+        "properties": {
+          "idArticulo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombre": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
+          },
+          "descripcion": {
+            "maxLength": 500,
+            "minLength": 0,
+            "type": "string"
+          },
+          "contenido": {
+            "type": "string",
+            "nullable": true
+          },
+          "imagenURL": {
+            "type": "string",
+            "nullable": true
+          },
+          "estado": {
+            "pattern": "[A-Z]",
+            "type": "string"
+          },
+          "idCategoria": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "categoria": {
+            "$ref": "#/components/schemas/Categorias"
+          },
+          "fechaPublicacion": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "articuloAutor": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ArticuloAutor"
+            },
+            "nullable": true
+          },
+          "articuloEtiqueta": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ArticuloEtiqueta"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Categorias": {
+        "required": [
+          "descripcion",
+          "estado",
+          "nombre"
+        ],
+        "type": "object",
+        "properties": {
+          "idCategoria": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombre": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
+          },
+          "descripcion": {
+            "maxLength": 600,
+            "minLength": 0,
+            "type": "string"
+          },
+          "urlImagen": {
+            "type": "string",
+            "nullable": true
+          },
+          "estado": {
+            "pattern": "[A-Z]",
+            "type": "string"
+          },
+          "idSeccion": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "seccion": {
+            "$ref": "#/components/schemas/Secciones"
+          },
+          "articulo": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Articulos"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Etiquetas": {
+        "required": [
+          "estado",
+          "nombre"
+        ],
+        "type": "object",
+        "properties": {
+          "idEtiqueta": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombre": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "format": "string"
+          },
+          "estado": {
+            "pattern": "[A-Z]",
+            "type": "string",
+            "format": "string"
+          },
+          "articuloEtiqueta": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ArticuloEtiqueta"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Secciones": {
+        "required": [
+          "descripcion",
+          "estado",
+          "nombre"
+        ],
+        "type": "object",
+        "properties": {
+          "idSeccion": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombre": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "format": "string"
+          },
+          "descripcion": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "format": "string"
+          },
+          "imagenURL": {
+            "type": "string",
+            "nullable": true
+          },
+          "estado": {
+            "pattern": "[A-Z]",
+            "type": "string",
+            "format": "string"
+          },
+          "categoria": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Categorias"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Usuario": {
+        "required": [
+          "clave",
+          "email",
+          "estado",
+          "nombre",
+          "rol"
+        ],
+        "type": "object",
+        "properties": {
+          "idUsuario": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombre": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "format": "string"
+          },
+          "email": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "format": "string"
+          },
+          "clave": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string",
+            "format": "string"
+          },
+          "rol": {
+            "minLength": 1,
+            "pattern": "[A-Z]",
+            "type": "string",
+            "format": "string"
+          },
+          "estado": {
+            "pattern": "[A-Z]",
+            "type": "string",
+            "format": "string"
+          },
+          "articuloAutor": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ArticuloAutor"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "WeatherForecast": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "temperatureC": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "temperatureF": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "summary": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Mar_Azul_API.props" />
+</Project>
