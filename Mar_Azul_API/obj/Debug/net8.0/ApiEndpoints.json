@@ -1,5 +1,414 @@
 [
   {
+    "ContainingType": "Mar_Azul_API.Controllers.ArticuloController",
+    "Method": "GetArticulo",
+    "RelativePath": "api/Articulo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Mar_Azul_API.DTO.ArticuloDTO, Mar_Azul_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Mar_Azul_API.Controllers.ArticuloController",
+    "Method": "PostArticulo",
+    "RelativePath": "api/Articulo",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "IdArticulo",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Nombre",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Descripcion",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contenido",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ImagenUrl",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Estado",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "IdCategoria",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Categoria.IdCategoria",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Categoria.Nombre",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Categoria.Descripcion",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Categoria.UrlImagen",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Categoria.Estado",
+        "Type": "System.Char",
+        "IsRequired": false
+      },
+      {
+        "Name": "Categoria.IdSeccion",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Categoria.Seccion.IdSeccion",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Categoria.Seccion.Nombre",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Categoria.Seccion.Descripcion",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Categoria.Seccion.ImagenURL",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Categoria.Seccion.Estado",
+        "Type": "System.Char",
+        "IsRequired": false
+      },
+      {
+        "Name": "Categoria.Seccion.Categoria",
+        "Type": "System.Collections.Generic.ICollection\u00601[[Mar_Azul_API.Models.Categorias, Mar_Azul_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Categoria.Articulo",
+        "Type": "System.Collections.Generic.ICollection\u00601[[Mar_Azul_API.Models.Articulos, Mar_Azul_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "FechaPublicacion",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "ArticuloAutor",
+        "Type": "System.Collections.Generic.ICollection\u00601[[Mar_Azul_API.Models.ArticuloAutor, Mar_Azul_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "ArticuloEtiqueta",
+        "Type": "System.Collections.Generic.ICollection\u00601[[Mar_Azul_API.Models.ArticuloEtiqueta, Mar_Azul_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "ContentType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ContentDisposition",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Headers",
+        "Type": "Microsoft.AspNetCore.Http.IHeaderDictionary",
+        "IsRequired": false
+      },
+      {
+        "Name": "Length",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "FileName",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Mar_Azul_API.Models.Articulos",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Mar_Azul_API.Controllers.ArticuloController",
+    "Method": "PutArticulo",
+    "RelativePath": "api/Articulo/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "IdArticulo",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Nombre",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Descripcion",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Contenido",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ImagenUrl",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Estado",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "IdCategoria",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Categoria.IdCategoria",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Categoria.Nombre",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Categoria.Descripcion",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Categoria.UrlImagen",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Categoria.Estado",
+        "Type": "System.Char",
+        "IsRequired": false
+      },
+      {
+        "Name": "Categoria.IdSeccion",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Categoria.Seccion.IdSeccion",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Categoria.Seccion.Nombre",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Categoria.Seccion.Descripcion",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Categoria.Seccion.ImagenURL",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Categoria.Seccion.Estado",
+        "Type": "System.Char",
+        "IsRequired": false
+      },
+      {
+        "Name": "Categoria.Seccion.Categoria",
+        "Type": "System.Collections.Generic.ICollection\u00601[[Mar_Azul_API.Models.Categorias, Mar_Azul_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Categoria.Articulo",
+        "Type": "System.Collections.Generic.ICollection\u00601[[Mar_Azul_API.Models.Articulos, Mar_Azul_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "FechaPublicacion",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      },
+      {
+        "Name": "ArticuloAutor",
+        "Type": "System.Collections.Generic.ICollection\u00601[[Mar_Azul_API.Models.ArticuloAutor, Mar_Azul_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "ArticuloEtiqueta",
+        "Type": "System.Collections.Generic.ICollection\u00601[[Mar_Azul_API.Models.ArticuloEtiqueta, Mar_Azul_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "ContentType",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ContentDisposition",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Headers",
+        "Type": "Microsoft.AspNetCore.Http.IHeaderDictionary",
+        "IsRequired": false
+      },
+      {
+        "Name": "Length",
+        "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "Name",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "FileName",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Mar_Azul_API.Controllers.ArticuloController",
+    "Method": "DeleteArticulo",
+    "RelativePath": "api/Articulo/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Mar_Azul_API.Controllers.ArticuloController",
+    "Method": "GeArticulo",
+    "RelativePath": "api/Articulo/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Mar_Azul_API.DTO.ArticuloDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Mar_Azul_API.Controllers.ArticuloController",
+    "Method": "GetRandomArticulo",
+    "RelativePath": "api/Articulo/action/random",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Mar_Azul_API.DTO.ArticuloDTO, Mar_Azul_API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "Mar_Azul_API.Controllers.EtiquetasController",
     "Method": "AddEtiqueta",
     "RelativePath": "api/Etiquetas/AddEtiqueta",
@@ -225,36 +634,6 @@
       },
       {
         "Name": "Estado",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ContentType",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ContentDisposition",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Headers",
-        "Type": "Microsoft.AspNetCore.Http.IHeaderDictionary",
-        "IsRequired": false
-      },
-      {
-        "Name": "Length",
-        "Type": "System.Int64",
-        "IsRequired": false
-      },
-      {
-        "Name": "Name",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "FileName",
         "Type": "System.String",
         "IsRequired": false
       }

@@ -5,6 +5,673 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/Articulo": {
+      "get": {
+        "tags": [
+          "Articulo"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ArticuloDTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ArticuloDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ArticuloDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Articulo"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "Categoria.Descripcion",
+                  "Categoria.Estado",
+                  "Categoria.Nombre",
+                  "Categoria.Seccion.Descripcion",
+                  "Categoria.Seccion.Estado",
+                  "Categoria.Seccion.Nombre",
+                  "Descripcion",
+                  "Estado",
+                  "Nombre"
+                ],
+                "type": "object",
+                "properties": {
+                  "IdArticulo": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Nombre": {
+                    "maxLength": 100,
+                    "minLength": 0,
+                    "type": "string"
+                  },
+                  "Descripcion": {
+                    "maxLength": 500,
+                    "minLength": 0,
+                    "type": "string"
+                  },
+                  "Contenido": {
+                    "type": "string"
+                  },
+                  "ImagenUrl": {
+                    "type": "string"
+                  },
+                  "Estado": {
+                    "pattern": "[A-Z]",
+                    "type": "string"
+                  },
+                  "IdCategoria": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Categoria.IdCategoria": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Categoria.Nombre": {
+                    "maxLength": 100,
+                    "minLength": 0,
+                    "type": "string"
+                  },
+                  "Categoria.Descripcion": {
+                    "maxLength": 600,
+                    "minLength": 0,
+                    "type": "string"
+                  },
+                  "Categoria.UrlImagen": {
+                    "type": "string"
+                  },
+                  "Categoria.Estado": {
+                    "pattern": "[A-Z]",
+                    "type": "string"
+                  },
+                  "Categoria.IdSeccion": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Categoria.Seccion.IdSeccion": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Categoria.Seccion.Nombre": {
+                    "maxLength": 100,
+                    "minLength": 0,
+                    "type": "string",
+                    "format": "string"
+                  },
+                  "Categoria.Seccion.Descripcion": {
+                    "maxLength": 100,
+                    "minLength": 0,
+                    "type": "string",
+                    "format": "string"
+                  },
+                  "Categoria.Seccion.ImagenURL": {
+                    "type": "string"
+                  },
+                  "Categoria.Seccion.Estado": {
+                    "pattern": "[A-Z]",
+                    "type": "string",
+                    "format": "string"
+                  },
+                  "Categoria.Seccion.Categoria": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Categorias"
+                    }
+                  },
+                  "Categoria.Articulo": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Articulos"
+                    }
+                  },
+                  "FechaPublicacion": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "ArticuloAutor": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/ArticuloAutor"
+                    }
+                  },
+                  "ArticuloEtiqueta": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/ArticuloEtiqueta"
+                    }
+                  },
+                  "ContentType": {
+                    "type": "string"
+                  },
+                  "ContentDisposition": {
+                    "type": "string"
+                  },
+                  "Headers": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "Length": {
+                    "type": "integer",
+                    "format": "int64"
+                  },
+                  "Name": {
+                    "type": "string"
+                  },
+                  "FileName": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "IdArticulo": {
+                  "style": "form"
+                },
+                "Nombre": {
+                  "style": "form"
+                },
+                "Descripcion": {
+                  "style": "form"
+                },
+                "Contenido": {
+                  "style": "form"
+                },
+                "ImagenUrl": {
+                  "style": "form"
+                },
+                "Estado": {
+                  "style": "form"
+                },
+                "IdCategoria": {
+                  "style": "form"
+                },
+                "Categoria.IdCategoria": {
+                  "style": "form"
+                },
+                "Categoria.Nombre": {
+                  "style": "form"
+                },
+                "Categoria.Descripcion": {
+                  "style": "form"
+                },
+                "Categoria.UrlImagen": {
+                  "style": "form"
+                },
+                "Categoria.Estado": {
+                  "style": "form"
+                },
+                "Categoria.IdSeccion": {
+                  "style": "form"
+                },
+                "Categoria.Seccion.IdSeccion": {
+                  "style": "form"
+                },
+                "Categoria.Seccion.Nombre": {
+                  "style": "form"
+                },
+                "Categoria.Seccion.Descripcion": {
+                  "style": "form"
+                },
+                "Categoria.Seccion.ImagenURL": {
+                  "style": "form"
+                },
+                "Categoria.Seccion.Estado": {
+                  "style": "form"
+                },
+                "Categoria.Seccion.Categoria": {
+                  "style": "form"
+                },
+                "Categoria.Articulo": {
+                  "style": "form"
+                },
+                "FechaPublicacion": {
+                  "style": "form"
+                },
+                "ArticuloAutor": {
+                  "style": "form"
+                },
+                "ArticuloEtiqueta": {
+                  "style": "form"
+                },
+                "ContentType": {
+                  "style": "form"
+                },
+                "ContentDisposition": {
+                  "style": "form"
+                },
+                "Headers": {
+                  "style": "form"
+                },
+                "Length": {
+                  "style": "form"
+                },
+                "Name": {
+                  "style": "form"
+                },
+                "FileName": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Articulos"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Articulos"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Articulos"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Articulo/action/random": {
+      "get": {
+        "tags": [
+          "Articulo"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ArticuloDTO"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ArticuloDTO"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ArticuloDTO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Articulo/{id}": {
+      "put": {
+        "tags": [
+          "Articulo"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "Categoria.Descripcion",
+                  "Categoria.Estado",
+                  "Categoria.Nombre",
+                  "Categoria.Seccion.Descripcion",
+                  "Categoria.Seccion.Estado",
+                  "Categoria.Seccion.Nombre",
+                  "Descripcion",
+                  "Estado",
+                  "Nombre"
+                ],
+                "type": "object",
+                "properties": {
+                  "IdArticulo": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Nombre": {
+                    "maxLength": 100,
+                    "minLength": 0,
+                    "type": "string"
+                  },
+                  "Descripcion": {
+                    "maxLength": 500,
+                    "minLength": 0,
+                    "type": "string"
+                  },
+                  "Contenido": {
+                    "type": "string"
+                  },
+                  "ImagenUrl": {
+                    "type": "string"
+                  },
+                  "Estado": {
+                    "pattern": "[A-Z]",
+                    "type": "string"
+                  },
+                  "IdCategoria": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Categoria.IdCategoria": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Categoria.Nombre": {
+                    "maxLength": 100,
+                    "minLength": 0,
+                    "type": "string"
+                  },
+                  "Categoria.Descripcion": {
+                    "maxLength": 600,
+                    "minLength": 0,
+                    "type": "string"
+                  },
+                  "Categoria.UrlImagen": {
+                    "type": "string"
+                  },
+                  "Categoria.Estado": {
+                    "pattern": "[A-Z]",
+                    "type": "string"
+                  },
+                  "Categoria.IdSeccion": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Categoria.Seccion.IdSeccion": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Categoria.Seccion.Nombre": {
+                    "maxLength": 100,
+                    "minLength": 0,
+                    "type": "string",
+                    "format": "string"
+                  },
+                  "Categoria.Seccion.Descripcion": {
+                    "maxLength": 100,
+                    "minLength": 0,
+                    "type": "string",
+                    "format": "string"
+                  },
+                  "Categoria.Seccion.ImagenURL": {
+                    "type": "string"
+                  },
+                  "Categoria.Seccion.Estado": {
+                    "pattern": "[A-Z]",
+                    "type": "string",
+                    "format": "string"
+                  },
+                  "Categoria.Seccion.Categoria": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Categorias"
+                    }
+                  },
+                  "Categoria.Articulo": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Articulos"
+                    }
+                  },
+                  "FechaPublicacion": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "ArticuloAutor": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/ArticuloAutor"
+                    }
+                  },
+                  "ArticuloEtiqueta": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/ArticuloEtiqueta"
+                    }
+                  },
+                  "ContentType": {
+                    "type": "string"
+                  },
+                  "ContentDisposition": {
+                    "type": "string"
+                  },
+                  "Headers": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "Length": {
+                    "type": "integer",
+                    "format": "int64"
+                  },
+                  "Name": {
+                    "type": "string"
+                  },
+                  "FileName": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "IdArticulo": {
+                  "style": "form"
+                },
+                "Nombre": {
+                  "style": "form"
+                },
+                "Descripcion": {
+                  "style": "form"
+                },
+                "Contenido": {
+                  "style": "form"
+                },
+                "ImagenUrl": {
+                  "style": "form"
+                },
+                "Estado": {
+                  "style": "form"
+                },
+                "IdCategoria": {
+                  "style": "form"
+                },
+                "Categoria.IdCategoria": {
+                  "style": "form"
+                },
+                "Categoria.Nombre": {
+                  "style": "form"
+                },
+                "Categoria.Descripcion": {
+                  "style": "form"
+                },
+                "Categoria.UrlImagen": {
+                  "style": "form"
+                },
+                "Categoria.Estado": {
+                  "style": "form"
+                },
+                "Categoria.IdSeccion": {
+                  "style": "form"
+                },
+                "Categoria.Seccion.IdSeccion": {
+                  "style": "form"
+                },
+                "Categoria.Seccion.Nombre": {
+                  "style": "form"
+                },
+                "Categoria.Seccion.Descripcion": {
+                  "style": "form"
+                },
+                "Categoria.Seccion.ImagenURL": {
+                  "style": "form"
+                },
+                "Categoria.Seccion.Estado": {
+                  "style": "form"
+                },
+                "Categoria.Seccion.Categoria": {
+                  "style": "form"
+                },
+                "Categoria.Articulo": {
+                  "style": "form"
+                },
+                "FechaPublicacion": {
+                  "style": "form"
+                },
+                "ArticuloAutor": {
+                  "style": "form"
+                },
+                "ArticuloEtiqueta": {
+                  "style": "form"
+                },
+                "ContentType": {
+                  "style": "form"
+                },
+                "ContentDisposition": {
+                  "style": "form"
+                },
+                "Headers": {
+                  "style": "form"
+                },
+                "Length": {
+                  "style": "form"
+                },
+                "Name": {
+                  "style": "form"
+                },
+                "FileName": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Articulo"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Articulo"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ArticuloDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ArticuloDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ArticuloDTO"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Etiquetas/GetEtiquetas": {
       "get": {
         "tags": [
@@ -12,7 +679,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Success",
             "content": {
               "text/plain": {
                 "schema": {
@@ -61,7 +728,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Success",
             "content": {
               "text/plain": {
                 "schema": {
@@ -100,7 +767,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Success",
             "content": {
               "text/plain": {
                 "schema": {
@@ -157,7 +824,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Success",
             "content": {
               "text/plain": {
                 "schema": {
@@ -216,7 +883,7 @@
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Success"
           }
         }
       }
@@ -239,7 +906,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Success"
           }
         }
       }
@@ -251,13 +918,13 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Success",
             "content": {
               "text/plain": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Usuario"
+                    "$ref": "#/components/schemas/UsuarioDTO"
                   }
                 }
               },
@@ -265,7 +932,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Usuario"
+                    "$ref": "#/components/schemas/UsuarioDTO"
                   }
                 }
               },
@@ -273,54 +940,8 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Usuario"
+                    "$ref": "#/components/schemas/UsuarioDTO"
                   }
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Usuario"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Usuario"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Usuario"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Usuario"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Usuario"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Usuario"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Usuario"
                 }
               }
             }
@@ -346,7 +967,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Success",
             "content": {
               "text/plain": {
                 "schema": {
@@ -367,7 +988,7 @@
           }
         }
       },
-      "put": {
+      "patch": {
         "tags": [
           "Usuario"
         ],
@@ -384,26 +1005,80 @@
         ],
         "requestBody": {
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/Usuario"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Usuario"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/Usuario"
+                "type": "object",
+                "properties": {
+                  "IdUsuario": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Nombre": {
+                    "type": "string"
+                  },
+                  "Email": {
+                    "type": "string"
+                  },
+                  "Clave": {
+                    "type": "string"
+                  },
+                  "Rol": {
+                    "type": "string"
+                  },
+                  "token": {
+                    "type": "string"
+                  },
+                  "Estado": {
+                    "type": "string"
+                  }
+                }
+              },
+              "encoding": {
+                "IdUsuario": {
+                  "style": "form"
+                },
+                "Nombre": {
+                  "style": "form"
+                },
+                "Email": {
+                  "style": "form"
+                },
+                "Clave": {
+                  "style": "form"
+                },
+                "Rol": {
+                  "style": "form"
+                },
+                "token": {
+                  "style": "form"
+                },
+                "Estado": {
+                  "style": "form"
+                }
               }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsuarioDTO"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsuarioDTO"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsuarioDTO"
+                }
+              }
+            }
           }
         }
       },
@@ -424,7 +1099,7 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "Success"
           }
         }
       }
@@ -437,7 +1112,7 @@
         "operationId": "GetWeatherForecast",
         "responses": {
           "200": {
-            "description": "OK",
+            "description": "Success",
             "content": {
               "text/plain": {
                 "schema": {
@@ -491,6 +1166,44 @@
         },
         "additionalProperties": false
       },
+      "ArticuloDTO": {
+        "type": "object",
+        "properties": {
+          "idArticulo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "contenido": {
+            "type": "string",
+            "nullable": true
+          },
+          "categoria": {
+            "type": "string",
+            "nullable": true
+          },
+          "imagenUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaPublicacion": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "estado": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "ArticuloEtiqueta": {
         "type": "object",
         "properties": {
@@ -537,11 +1250,12 @@
             "type": "string",
             "nullable": true
           },
-          "imagenURL": {
+          "imagenUrl": {
             "type": "string",
             "nullable": true
           },
           "estado": {
+            "minLength": 1,
             "pattern": "[A-Z]",
             "type": "string"
           },
@@ -619,6 +1333,50 @@
           }
         },
         "additionalProperties": false
+      },
+      "DateOnly": {
+        "type": "object",
+        "properties": {
+          "year": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "month": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "day": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dayOfWeek": {
+            "$ref": "#/components/schemas/DayOfWeek"
+          },
+          "dayOfYear": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "dayNumber": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DayOfWeek": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "type": "integer",
+        "format": "int32"
       },
       "Etiquetas": {
         "required": [
@@ -734,6 +1492,7 @@
             "format": "string"
           },
           "estado": {
+            "minLength": 1,
             "pattern": "[A-Z]",
             "type": "string",
             "format": "string"
@@ -748,12 +1507,45 @@
         },
         "additionalProperties": false
       },
+      "UsuarioDTO": {
+        "type": "object",
+        "properties": {
+          "idUsuario": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "clave": {
+            "type": "string",
+            "nullable": true
+          },
+          "rol": {
+            "type": "string",
+            "nullable": true
+          },
+          "token": {
+            "type": "string",
+            "nullable": true
+          },
+          "estado": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "WeatherForecast": {
         "type": "object",
         "properties": {
           "date": {
-            "type": "string",
-            "format": "date"
+            "$ref": "#/components/schemas/DateOnly"
           },
           "temperatureC": {
             "type": "integer",

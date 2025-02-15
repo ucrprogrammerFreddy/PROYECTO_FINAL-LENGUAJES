@@ -19,11 +19,11 @@ namespace Mar_Azul_API.Models
 
         public string Contenido { get; set; }
 
-        public string? ImagenURL { get; set; }
+        public string? ImagenUrl { get; set; }
 
         [Required(ErrorMessage = "El estado es obligatorio.")]
         [RegularExpression("[A-Z]", ErrorMessage = "El estado debe ser un único carácter en mayúscula.")]
-        public char Estado { get; set; }
+        public string  Estado { get; set; }
 
         //  Relación con Categoría (Un Artículo pertenece a una Categoría)
        public int IdCategoria { get; set; }

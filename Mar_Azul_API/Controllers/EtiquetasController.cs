@@ -30,7 +30,7 @@ namespace Mar_Azul_API.Controllers
         /// Esto permite comparar nombres de forma uniforme.
         /// </summary>
         /// <param name="input">Texto a normalizar</param>
-        /// <returns>Texto normalizado</returns>
+      
         private static string Normalize(string input)
         {
             if (string.IsNullOrWhiteSpace(input))

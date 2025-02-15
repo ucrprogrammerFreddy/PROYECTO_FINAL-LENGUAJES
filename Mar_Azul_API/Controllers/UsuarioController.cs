@@ -56,8 +56,9 @@ namespace EcoHogar_API.Controllers
 
             return usuario;
         }
+
         [HttpPatch("{id}")]
-        public async Task<ActionResult<UsuarioDTO>> PatchUsuario(int id, [FromForm] UsuarioDTO usuarioDto, [FromForm] IFormFile? profileImage)
+        public async Task<ActionResult<UsuarioDTO>> PatchUsuario(int id, [FromForm] UsuarioDTO usuarioDto)
         {
             var usuario = await _context.Usuarios.FindAsync(id);
             if (usuario == null)
@@ -75,46 +76,15 @@ namespace EcoHogar_API.Controllers
                 usuario.Estado = usuarioDto.Estado;
             }
 
-
             if (!string.IsNullOrEmpty(usuarioDto.Rol))
             {
                 usuario.Rol = usuarioDto.Rol;
             }
 
-            //  actualizar el campo de correo
             if (!string.IsNullOrEmpty(usuarioDto.Email))
             {
-                usuario.Email = usuarioDto.Email; // Actualiza el correo
+                usuario.Email = usuarioDto.Email;
             }
-
-          /*  if (profileImage != null)
-            {
-                if (!profileImage.ContentType.StartsWith("image/"))
-                {
-                    return BadRequest("El archivo proporcionado no es una imagen válida.");
-                }
-
-                // Subir la imagen
-                var localFilePath = Path.GetTempFileName();
-                using (var stream = new FileStream(localFilePath, FileMode.Create))
-                {
-                    await profileImage.CopyToAsync(stream);
-                }
-
-                var (imagenUrl, errorMessage) = await _ftpService.UploadFileAsync(localFilePath, profileImage.FileName);
-                if (!string.IsNullOrEmpty(errorMessage))
-                {
-                    return StatusCode(500, $"Error subiendo la imagen: {errorMessage}");
-                }
-
-                // Actualizar la URL de la imagen en el perfil del usuario
-                usuario.ProfileImageURL = imagenUrl;
-
-                // Eliminar el archivo temporal
-                System.IO.File.Delete(localFilePath);
-            }
-            */
-
 
             // Marcar el usuario como modificado
             _context.Entry(usuario).State = EntityState.Modified;
@@ -143,11 +113,11 @@ namespace EcoHogar_API.Controllers
                 Email = usuario.Email,
                 Rol = usuario.Rol,
                 Estado = usuario.Estado
-   
             };
 
             return Ok(updatedUsuarioDto);
         }
+
 
 
         [HttpDelete("{id}")]
